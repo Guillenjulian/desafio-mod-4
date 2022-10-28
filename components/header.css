@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+.header {
+  height: 25vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.logo__img {
+  margin: 15px;
+  height: 75px;
+  width: 75px;
+}
+
+#nav-btn {
+  cursor: pointer;
+  height: 56px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 56px;
+  z-index: 100;
+}
+#nav-btn + label {
+  display: block;
+  height: 4px;
+  height: 56px;
+  left: 18px;
+  position: absolute;
+  right: 18px;
+  top: 44px;
+  width: 56px;
+}
+#nav-btn + span {
+  background-color: #ccc;
+  cursor: pointer;
+  display: block;
+  height: 4px;
+  position: absolute;
+  right: 20px;
+  top: 44px;
+  width: 56px;
+  z-index: 99;
+}
+#nav-btn + span::before,
+#nav-btn + span::after {
+  background-color: #ccc;
+  content: "";
+  display: block;
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 56px;
+}
+#nav-btn + span::before {
+  top: -20px;
+}
+#nav-btn + span::after {
+  bottom: -20px;
+}
+#nav-btn:checked + span {
+  background-color: #f5060a;
+}
+#nav-btn + span::before,
+#nav-btn + span::after {
+  transition-delay: 0.3s, 0s;
+  transition-duration: 0.3s, 0.3s;
+}
+#nav-btn + span::before {
+  transition-property: top, transform;
+}
+#nav-btn + span::after {
+  transition-property: bottom, transform;
+}
+#nav-btn:checked + span {
+  background: none;
+}
+#nav-btn:checked + span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+#nav-btn:checked + span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+#nav-btn:checked + span::before,
+#nav-btn:checked + span::after {
+  transition-delay: 0s, 0.3s;
+}
+#nav-btn:checked ~ nav {
+  left: 0px;
+  opacity: 100;
+  position: fixed;
+  visibility: 1;
+  z-index: 98;
+}
+#nav-btn:checked ~ nav ul {
+  transform: translate(-50%, -50%);
+}
+nav {
+  background: rgba(52, 82, 113, 0.98) none repeat scroll 0% 0%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 0.5s ease 0s, visibility 0s ease 0.5s;
+  visibility: 0;
+  width: 100%;
+  z-index: -1;
+}
+nav ul {
+  left: 50%;
+  moz-transition: all 1s ease-in-out;
+  o-transition: all 1s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0%);
+  transition: all 1s ease-in-out;
+  webkit-transition: all 1s ease-in-out;
+}
+nav li {
+  font-size: 30px;
+  list-style: none;
+  padding-bottom: 10px;
+  text-align: center;
+}
+nav ul li a:hover {
+  color: #fff;
+}
+nav li a {
+  color: #ccc;
+  text-decoration: none;
+}
+@media (min-width: 960) {
+  #hamburger {
+    display: none;
+  }
+}
