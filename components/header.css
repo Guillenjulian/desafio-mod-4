@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 .header {
-  height: 100vh;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -16,9 +15,9 @@
   }
 }
 .logo__img {
-  margin: 15px;
-  height: 75px;
-  width: 75px;
+  margin: 17px;
+  height: 100px;
+  width: 100px;
   display: inline;
 }
 @media (min-width: 960px) {
@@ -161,16 +160,18 @@ nav li a {
   .hamburger__960 {
     width: 50%;
     display: flex;
-    font-size: 40px;
+    font-size: 30px;
     flex-direction: row;
     align-items: flex-end;
     justify-content: right;
+    align-items: center;
   }
 }
 
 @media (min-width: 960px) {
   .hamburger__960-a {
     color: #c8c8c8;
-    padding: 15px;
+    padding: 25px;
+    font-size: 39px;
   }
 }

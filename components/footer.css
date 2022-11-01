@@ -1,0 +1,33 @@
+.footer {
+  padding: 0;
+  height: 100vh;
+  background-color: #3b5990;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 960px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 55vh;
+  }
+}
+
+.footer .logo__img {
+  margin: 80px;
+  height: 200px;
+  width: 200px;
+}
+.redes ul li {
+  padding: 0;
+  margin: 0;
+}
+.redes__li-a {
+  color: black;
+}
+.logo-redes {
+  height: 5vh;
+}

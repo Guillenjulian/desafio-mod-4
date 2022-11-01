@@ -4,46 +4,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <!-- se agrega bulma para darle estilo a  siertos componentes -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="./page/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!--  -->
+
+    <!--  componetes del header -->
+    <script defer src="./components/header.js"></script>
     <link rel="stylesheet" href="./components/header.css" />
-    <link rel="stylesheet" href="./page/contacto.css" />
+
+    <!-- este complemento trae  el formato de las cards -->
+    <script defer src="./components/cards.js"></script>
+    <link rel="stylesheet" href="./components/cards.css" />
+
+    <!--  este complemento maqueta el  form -->
+    <link rel="stylesheet" href="./components/form.css" />
+    <script defer src="./components/form.js"></script>
+
+    <!-- este complemento maqueta el footer -->
+    <script src="./components/footer.js"></script>
+    <link rel="stylesheet" href="./components/footer.css" />
+
+    <!-- index js y index css de la home principal -->
+    <script defer src="./page/index.js"></script>
+    <link rel="stylesheet" href="./page/index.css" />
+    <title>My Home</title>
   </head>
   <body>
     <div class="body">
-      <header class="header">
-        <div id="hamburger">
-          <input type="checkbox" name="nav-btn" id="nav-btn" />
-          <span></span>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="hamburger__960">
-          <a class="hamburger__960-a" href="#">Home</a>
-          <a class="hamburger__960-a" href="#">Service</a>
-          <a class="hamburger__960-a" href="#">Contact</a>
-        </div>
-        <div class="logo">
-          <img
-            class="logo__img"
-            src="./style-img-logo-etc/logo-removebg-preview.png"
-            alt=""
-          />
-        </div>
-      </header>
+      <section class="headerContainer"></section>
 
-      <section class="contacto"></section>
-      <section class="portafolio"></section>
-      <section class="form"></section>
+      <section class="hero">
+        <!-- <h1 class="hero__titulo">soy Julian</h1>
+        <img class="hero__img" src="" alt="" /> -->
+        <!-- <template id="hero__template"> </template> -->
+      </section>
+
+      <section class="cardsContainer"></section>
+
+      <div class="conteinerform">
+        <h1 class="conteinerform__title">Contacto</h1>
+        <section class="form"></section>
+      </div>
+
+      <section class="footer"></section>
     </div>
+    <template id="hero__template">
+      <div class="hero__body">
+        <p class="hero__title"></p>
+        <p class="hero__subtitle"></p>
+        <img class="hero__img" src="" alt="" />
+        <p class="hero__text"></p>
+        <a class="hero__link" href=""></a>
+      </div>
+    </template>
+    <template id="template__cards"> </template>
   </body>
 </html>
