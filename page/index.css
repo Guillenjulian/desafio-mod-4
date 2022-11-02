@@ -7,6 +7,20 @@
   margin: 0%;
   width: 100%;
 }
+.headerContainer {
+  height: 15vh;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcom__title {
+  font-family: "Roboto";
+  font-size: 50px;
+  color: #011464;
+}
 .hero-body {
   height: 100vh;
   text-align: center;

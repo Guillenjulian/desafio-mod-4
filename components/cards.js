@@ -23,13 +23,20 @@ function cardsCreater(cardscontainer) {
   </div>
     `;
 
-  function addCard() {
-    const templetCard = document.querySelector("#template__cards");
-    const contentCard = document.querySelector(".portafolio__conteiner");
-
-    let clone = document.importNode(templetCard.content, true);
-    contentCard.appendChild(clone);
-  }
-  // addCard();
   cardscontainer.appendChild(cardsEl);
+}
+function addcards(params = {}) {
+  const cardEl = document.querySelector(".portafolio__conteiner");
+}
+
+function getCard() {
+  return fetch(
+    "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/content_types/desafioMod4?access_token=vaS1bF8J0--5XkX33qLd-5o_qmrr992V7QzOj1GkCKA"
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then(() => {
+      return "hola";
+    });
 }

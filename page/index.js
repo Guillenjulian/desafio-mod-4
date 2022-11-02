@@ -19,12 +19,11 @@ function getData() {
     })
     .then((data) => {
       console.log(data);
-      const fieldsColection = data.map((item) => {
-        return {
-          title: item.fields.title,
-          subTitulo: fields.subTitle,
-        };
+      const fieldsColection = data.map((e) => {
+        e.fields.title;
+        console.log(e.fields.subTitulo);
       });
+
       return fieldsColection;
     });
 }
@@ -35,11 +34,14 @@ function main() {
       addHero(w);
     }
   });
-
+  // addCard();
+  // esta funcion trae el header
   headerCreater(document.querySelector(".headerContainer"));
 
   // esta funcion tre el formato de las cads
   cardsCreater(document.querySelector(".cardsContainer"));
+
+  // esta funcion trae el form
   formCreater(document.querySelector(".conteinerform"));
 
   footerCreater(document.querySelector(".footer"));

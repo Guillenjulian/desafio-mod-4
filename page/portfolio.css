@@ -7,7 +7,9 @@
 
   background-image: url("../style-img-logo-etc/DALL·E\ 2022-10-30\ 14.50.24.png");
 }
-
+.headerContainer {
+  height: 15vh;
+}
 .portafolio {
   margin: 0;
   padding: 0;
@@ -35,3 +37,41 @@
   font-size: 40px;
   margin: 0;
 } */
+.portafolio__conteiner {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media (min-width: 960px) {
+  .portafolio__conteiner {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
+}
+.portafolio__card {
+  align-items: center;
+  background-color: #f0f8fffb;
+
+  border: solid 5px black;
+  border-radius: 9px;
+  height: 45vh;
+  width: 35vh;
+  text-align: center;
+}
+
+.portafolio__card-img {
+  height: 15rem;
+  width: 15rem;
+}
+.portafolio__card-title {
+  text-align: center;
+  margin: 0;
+}
+.portafolio__card-text {
+  margin: 0;
+  text-align: center;
+}
+.portafolio__card-link {
+  margin: 0;
+}
