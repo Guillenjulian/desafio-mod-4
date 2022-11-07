@@ -48,41 +48,46 @@
   </head>
   <body>
     <div class="body">
+      <!-- header -->
       <section class="headerContainer"></section>
+      <!--  bienvenida -->
+      <section class="welcome"></section>
+      <template id="Welcome__Template">
+        <div class="welcome__div">
+          <h1 class="welcome__title">Bienvenidos</h1>
+          <p class="welcome__subtitle"></p>
+        </div>
+        <div class="welcome__div-card">
+          <img class="welcome__img" src="" alt="" />
+          <p class="welcome__description"></p>
+        </div>
+      </template>
+      <!--  cards -->
+      <section class="cards">
+        <div class="cards__container">
+          <img src="./style-img-logo-etc/logo2.png" alt="" class="cards__img" />
 
-      <section class="welcome">
-        <template id="WelcomeTemplate">
-          <h1 class="welcom__title">
-            Bienvenidos <br />
-            soy julian
-          </h1>
-        </template>
+          <div class="cards__info">
+            <h4 class="card__title">Un trabajo que realice</h4>
+            <p class="card__text">
+              Te cuento un poco más sobre este trabajo y sobre cómo la rompí en
+              este proyecto. si el texto se hace...
+            </p>
+            <a href="https://github.com/Guillenjulian" class="card__link">
+              Ver más...
+            </a>
+          </div>
+        </div>
       </section>
 
-      <section class="hero">
-        <!-- <h1 class="hero__titulo">soy Julian</h1>
-        <img class="hero__img" src="" alt="" /> -->
-        <!-- <template id="hero__template"> </template> -->
-      </section>
-
-      <section class="cardsContainer"></section>
-
-      <div class="conteinerform">
+      <!-- formulario -->
+      <section class="conteinerform">
         <h1 class="conteinerform__title">Contacto</h1>
         <section class="form"></section>
-      </div>
+      </section>
 
+      <!-- footer -->
       <section class="footer"></section>
     </div>
-    <template id="hero__template">
-      <div class="hero__body">
-        <p class="hero__title"></p>
-        <p class="hero__subtitle"></p>
-        <img class="hero__img" src="" alt="" />
-        <p class="hero__text"></p>
-        <a class="hero__link" href=""></a>
-      </div>
-    </template>
-    <template id="template__cards"> </template>
   </body>
 </html>

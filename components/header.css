@@ -3,10 +3,12 @@
 }
 .header {
   width: 100%;
-  height: 10%;
+  height: 25%;
   padding: 0;
   margin: 0;
   position: fixed;
+
+  background-color: #3f8ae7aa;
 }
 @media (min-width: 960px) {
   .header {
@@ -116,7 +118,7 @@
   transform: translate(-50%, -50%);
 }
 nav {
-  background: rgba(52, 82, 113, 0.98) none repeat scroll 0% 0%;
+  background: rgba(52, 82, 113, 0.249) none repeat scroll 0% 0%;
   height: 100%;
   opacity: 0;
   position: absolute;
@@ -143,11 +145,13 @@ nav li {
   text-align: center;
 }
 nav ul li a:hover {
-  color: #fff;
+  color: rgba(55, 46, 229, 0.834);
 }
 nav li a {
-  color: #ccc;
+  color: rgba(55, 46, 229, 0.834);
   text-decoration: none;
+}
+#hamburger {
 }
 @media (min-width: 960px) {
   #hamburger {
@@ -172,7 +176,7 @@ nav li a {
 
 @media (min-width: 960px) {
   .hamburger__960-a {
-    color: #c8c8c8;
+    color: rgba(55, 46, 229, 0.834);
     padding: 25px;
     font-size: 39px;
   }

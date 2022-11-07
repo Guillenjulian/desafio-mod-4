@@ -1,40 +1,50 @@
 function addHero(params = {}) {
-  const templet = document.querySelector("#hero__template");
-  const content = document.querySelector(".hero");
-  templet.content.querySelector(".hero__title").textContent = params.title;
-  templet.content.querySelector(".hero__text").textContent = params.subTitulo;
-  templet.content.querySelector(".hero__img").src = params.image;
-  templet.content.querySelector(".hero__link").href = params.url;
+  const templetEl = document.querySelector("#Welcome__Template");
+  const contentEl = document.querySelector(".welcome");
 
-  let clone = document.importNode(templet.content, true);
-  content.appendChild(clone);
+  templetEl.content.querySelector(".welcome__title").textContent = params.title;
+  templetEl.content.querySelector(".welcome__subtitle").textContent =
+    params.subtitle;
+  templetEl.content.querySelector(".welcome__img").src = params.img;
+  templetEl.content.querySelector(".welcome__description").textContent =
+    params.description;
+
+  const clone = templetEl.content.cloneNode(true);
+
+  contentEl.appendChild(clone);
 }
 
 function getData() {
-  return fetch(
-    "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/entries/2G6HSNNPDXhapfTDNHXFse?access_token=R3dhIjzxcIiPe-3vfTYDD4aZnBqZHeHTqT5Ei6JjtYQ"
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-      const fieldsColection = data.map((e) => {
-        e.fields.title;
-        console.log(e.fields.subTitulo);
-      });
-
-      return fieldsColection;
-    });
+  return (
+    fetch(
+      "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/entries?access_token=R3dhIjzxcIiPe-3vfTYDD4aZnBqZHeHTqT5Ei6JjtYQ&content_type=hero"
+    )
+      .then((res) => {
+        return res.json();
+      })
+      // .then((data) => addHero(data));
+      .then((data) => {
+        console.log(data);
+        const fieldsColection = data.items.map((item) => {
+          return {
+            title: item.fields.title,
+            subtitle: item.fields.subTitle,
+            img: data.includes.Asset[0].fields.file.url,
+            description: item.fields.description,
+          };
+        });
+        return fieldsColection;
+      })
+  );
 }
 
 function main() {
-  getData().then(function (words) {
-    for (let w of words) {
+  getData().then(function (works) {
+    for (const w of works) {
       addHero(w);
     }
   });
-  // addCard();
+
   // esta funcion trae el header
   headerCreater(document.querySelector(".headerContainer"));
 

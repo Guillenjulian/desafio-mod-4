@@ -2,6 +2,85 @@
   box-sizing: border-box;
 }
 
+.welcome {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 40pxpx;
+  height: 90vh;
+  padding: 0 10vh 0 auto;
+  margin-top: 5%;
+}
+
+.welcome__div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 10px #3680db, -5px -5px 10px #db3636;
+}
+.welcome__title {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.welcome__title,
+.welcome__subtitle {
+  font-family: "Roboto";
+  color: rgba(242, 243, 249, 0.882);
+}
+.welcome__subtitle {
+  font-size: 30px;
+}
+.welcome__div-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.welcome__img {
+  height: 40%;
+  width: 50vh;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px #3680db, -5px -5px 10px #db3636;
+  align-items: end;
+}
+
+.welcome__description {
+  font-family: "Roboto";
+  font-size: 10px;
+  text-align: center;
+  height: 10vh;
+  color: rgba(242, 243, 249, 0.882);
+  text-shadow: #0099ff;
+  box-shadow: 5px 5px 10px #3680db, -5px -5px 10px #db3636;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.cards__container {
+  height: auto;
+}
+.cards__img {
+  height: 70px;
+  width: 50px;
+}
+.cards__info {
+}
+.card__title {
+  color: aliceblue;
+}
+.card__text {
+  color: aliceblue;
+}
+
+.card__link {
+  color: aliceblue;
+}
 .portafolio__conteiner {
   display: flex;
   flex-direction: column;
