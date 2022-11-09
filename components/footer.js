@@ -51,6 +51,6 @@ function footerCreater(footercontainer) {
       </li>
     </ul>
   </div>
-</div>`;
+  </div>`;
   footercontainer.appendChild(footerEl);
 }

@@ -24,7 +24,6 @@ function getData() {
       })
       // .then((data) => addHero(data));
       .then((data) => {
-        console.log(data);
         const fieldsColection = data.items.map((item) => {
           return {
             title: item.fields.title,
@@ -39,6 +38,12 @@ function getData() {
 }
 
 function main() {
+  getCards().then(function name(params) {
+    for (let i of params) {
+      cardsCreater(i);
+    }
+  });
+
   getData().then(function (works) {
     for (const w of works) {
       addHero(w);
@@ -49,7 +54,7 @@ function main() {
   headerCreater(document.querySelector(".headerContainer"));
 
   // esta funcion tre el formato de las cads
-  cardsCreater(document.querySelector(".cardsContainer"));
+  //cardsCreater(document.querySelector(".cards"));
 
   // esta funcion trae el form
   formCreater(document.querySelector(".conteinerform"));

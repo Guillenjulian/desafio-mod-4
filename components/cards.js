@@ -1,50 +1,33 @@
-// function cardsCreater() {
-//   const cardsEl = document.createElement("div");
-//   cardsEl.innerHTML = `
-//     <div class="portafolio__conteiner">
-//     <div class="portafolio__card">
-//       .
-//       <img
-//         class="portafolio__card-img"
-//         src="./style-img-logo-etc/logo-removebg-preview.png"
-//         alt=""
-//       />
-//       <h3 class="portafolio__card-title">temple</h3>
-//       <p class="portafolio__card-text">
-//         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
-//         eum enim quia. Porro ab nesciunt nisi ipsa nulla aperiam velit.
-//       </p>
-//       <a
-//         class="portafolio__card-link"
-//         href="https://github.com/Guillenjulian"
-//         >link</a
-//       >
-//     </div>
-//   </div>
-//     `;
-//   return cardsEl;
-// }
-// function addcards(params = {}) {
-//   const cardEl = document.querySelector(".portafolio__conteiner");
-//   cardscontainer.appendChild(cardsEl);
-// }
+function cardsCreater(params = {}) {
+  const templetEl = document.querySelector("#cards__template");
+  const cardsEL = document.querySelector(".cards");
 
-// function getCard() {
-//   return fetch(
-//     "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/content_types/desafioMod4?access_token=vaS1bF8J0--5XkX33qLd-5o_qmrr992V7QzOj1GkCKA"
-//   )
-//     .then((res) => {
-//       return res.json();
-//     })
-//     .then((data) => {
-//       return console.log(data, "hola");
-//     });
-// }
-// function main() {
-//   getCard().then(function (words) {
-//     for (let w of words) {
-//       addcards(w);
-//     }
-//   });
-// }
-// main();
+  templetEl.content.querySelector(".card__title").textContent = params.title;
+  templetEl.content.querySelector(".cards__img").src = params.img;
+  templetEl.content.querySelector(".card__text").textContent = params.desc;
+
+  //console.log(cardsEL, templetEl);
+  const clone = templetEl.content.cloneNode(true);
+
+  cardsEL.appendChild(clone);
+}
+
+function getCards() {
+  return fetch(
+    "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/entries?access_token=6vbVTaB0u7IgTgtNuBFYoZma3Z2paU9O2zHGdyCwdD4&content_type=works"
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const fieldsColection = data.items.map((item) => {
+        return {
+          title: item.fields.title,
+          subtitle: item.fields.subTitle,
+          img: data.includes.Asset[0].fields.file.url,
+          desc: item.fields.description,
+        };
+      });
+      return fieldsColection;
+    });
+}

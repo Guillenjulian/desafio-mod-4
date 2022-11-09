@@ -23,6 +23,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!--  -->
 
     <!--  componetes del header -->
@@ -46,24 +52,31 @@
     <link rel="stylesheet" href="./page/index.css" />
     <title>My Home</title>
   </head>
+
   <body>
     <div class="body">
       <!-- header -->
+
       <section class="headerContainer"></section>
       <!--  bienvenida -->
+
       <section class="welcome"></section>
       <template id="Welcome__Template">
         <div class="welcome__div">
-          <h1 class="welcome__title">Bienvenidos</h1>
-          <p class="welcome__subtitle"></p>
-        </div>
-        <div class="welcome__div-card">
-          <img class="welcome__img" src="" alt="" />
-          <p class="welcome__description"></p>
+          <div class="welcome__div-continer">
+            <h1 class="welcome__title">Bienvenidos</h1>
+            <p class="welcome__subtitle"></p>
+            <p class="welcome__description"></p>
+          </div>
+          <div>
+            <img class="welcome__img" src="" alt="" />
+          </div>
         </div>
       </template>
+
       <!--  cards -->
-      <section class="cards">
+      <section class="cards"></section>
+      <template id="cards__template">
         <div class="cards__container">
           <img src="./style-img-logo-etc/logo2.png" alt="" class="cards__img" />
 
@@ -78,7 +91,7 @@
             </a>
           </div>
         </div>
-      </section>
+      </template>
 
       <!-- formulario -->
       <section class="conteinerform">
