@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- este complemento trae el header -->
     <script defer src="./components/header.js"></script>
     <link rel="stylesheet" href="./components/header.css" />
@@ -25,33 +31,25 @@
     <!--  section del header -->
     <section class="headerContainer"></section>
     <!--  section de las cards -->
-    <section class="portafolio">
-      <div class="portafolio__hero">
-        <h1 class="portafolio__hero-title">Portafolio y Servicio</h1>
+
+    <div class="servicios">
+      <h3 class="servicios__title">Portafolio</h3>
+    </div>
+    <section class="cardsContainer"></section>
+    <template id="cards__template">
+      <div class="portafolio__card">
+        .
+        <img class="portafolio__card-img" src="" alt="" />
+        <h3 class="portafolio__card-title">temple</h3>
+        <p class="portafolio__card-text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt eum
+          enim quia. Porro ab nesciunt nisi ipsa nulla aperiam velit.
+        </p>
+        <a class="portafolio__card-link" href="https://github.com/Guillenjulian"
+          >link</a
+        >
       </div>
-      <section class="cardsContainer">
-        <!-- <template class="portafolio__conteiner"> -->
-          <div class="portafolio__card">
-            .
-            <img
-              class="portafolio__card-img"
-              src="./style-img-logo-etc/logo-removebg-preview.png"
-              alt=""
-            />
-            <h3 class="portafolio__card-title">temple</h3>
-            <p class="portafolio__card-text">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
-              eum enim quia. Porro ab nesciunt nisi ipsa nulla aperiam velit.
-            </p>
-            <a
-              class="portafolio__card-link"
-              href="https://github.com/Guillenjulian"
-              >link</a
-            >
-          </div>
-        </template>
-      </section>
-    </section>
+    </template>
 
     <!-- section  del footer -->
     <section class="footer"></section>

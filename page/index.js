@@ -38,12 +38,7 @@ function getData() {
 }
 
 function main() {
-  getCards().then(function name(params) {
-    for (let i of params) {
-      cardsCreater(i);
-    }
-  });
-
+  // esta funcion trae el welcome
   getData().then(function (works) {
     for (const w of works) {
       addHero(w);
@@ -54,7 +49,11 @@ function main() {
   headerCreater(document.querySelector(".headerContainer"));
 
   // esta funcion tre el formato de las cads
-  //cardsCreater(document.querySelector(".cards"));
+  getCards().then(function name(params) {
+    for (let i of params) {
+      cardsCreater(i);
+    }
+  });
 
   // esta funcion trae el form
   formCreater(document.querySelector(".conteinerform"));

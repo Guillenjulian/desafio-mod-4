@@ -1,9 +1,11 @@
 function main() {
   headerCreater(document.querySelector(".headerContainer"));
 
-  // esta funcion tre el formato de las cads
-  // cardsCreater(document.querySelector(".cardsContainer"));
-
+  getData().then(function (works) {
+    for (const w of works) {
+      addCards(w);
+    }
+  });
   footerCreater(document.querySelector(".footer"));
 }
 main();
