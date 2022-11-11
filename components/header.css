@@ -3,7 +3,7 @@
 }
 .header {
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   padding: 0;
   margin: 0;
   background: rgb(54, 179, 205);
@@ -20,6 +20,7 @@
     justify-content: space-between;
     flex-direction: row-reverse;
     align-items: flex-start;
+    height: 20vh;
   }
 }
 .logo__img {
@@ -183,5 +184,6 @@ nav li a {
     color: #efeef5eb;
     padding: 25px;
     font-size: 39px;
+    text-decoration: none;
   }
 }
