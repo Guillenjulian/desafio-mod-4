@@ -66,6 +66,8 @@
 .portafolio__card-img {
   width: 100%;
   height: 210px;
+  max-width: 380px;
+  object-fit: contain;
 }
 .cards__info {
   padding: 15px;

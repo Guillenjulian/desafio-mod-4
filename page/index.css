@@ -44,10 +44,15 @@
   font-weight: 700;
   font-family: "Roboto";
   font-size: 5em;
-  color: #f18787;
+  color: #965c5c;
   margin: 0;
   background-position: left 200px;
   text-shadow: 16px 9px 8px rgba(0, 0, 0, 0.54);
+}
+@media (max-width: 960px) {
+  .welcome__title {
+    font-size: 3em;
+  }
 }
 
 .welcome__subtitle {
@@ -55,9 +60,14 @@
   font-weight: 400;
   font-family: "Roboto";
   font-size: 5em;
-  color: #f18787;
+  color: #965c5c;
   margin: 0;
   text-shadow: 16px 9px 8px rgba(0, 0, 0, 0.54);
+}
+@media (max-width: 960px) {
+  .welcome__subtitle {
+    font-size: 3em;
+  }
 }
 .welcome__description {
   padding: 5vh;
@@ -67,7 +77,8 @@
   font-size: 1.5em;
   margin-bottom: 20px;
   text-align: center;
-  color: #f18787;
+  color: #965c5c;
+  background-color: rgba(207, 223, 236, 0.377);
   text-shadow: 16px 9px 8px rgba(0, 0, 0, 0.54);
 }
 
@@ -79,4 +90,6 @@
   -webkit-box-shadow: 53px 33px 38px 3px rgba(0, 0, 0, 0.63);
   -moz-box-shadow: 53px 33px 38px 3px rgba(0, 0, 0, 0.63);
   align-items: baseline;
+  max-width: 380px;
+  object-fit: unset;
 }

@@ -23,18 +23,16 @@
 
 .field {
   background: rgba(54, 180, 205, 0.949);
-
   border-radius: 5px;
-
-  height: 50vh;
-  width: 50vh;
+  height: 75vh;
+  width: 90vh;
 }
 
-@media (max-width: 960) {
+@media (max-width: 960px) {
   .field {
-    height: 75vh;
-    width: 90vh;
     align-items: center;
+    height: 50vh;
+    width: 48vh;
   }
 }
 .button {
