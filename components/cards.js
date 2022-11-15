@@ -22,14 +22,13 @@ function getCards() {
       return res.json();
     })
     .then((data) => {
-      console.log(data);
       const fieldsColection = data.items.map((item) => {
         return {
           title: item.fields.title,
           subtitle: item.fields.subTitle,
           img: data.includes.Asset[0].fields.file.url,
           desc: item.fields.description,
-          //     link: item.includes.items[0].fields.url.content[0].content[0].value,
+          link: item.fields.url,
         };
       });
       return fieldsColection;
@@ -40,29 +39,15 @@ function getData() {
   return fetch(
     "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/entries?access_token=vaS1bF8J0--5XkX33qLd-5o_qmrr992V7QzOj1GkCKA&content_type=desafioMod4"
   )
-    .then((res) => {
-      return res.json();
-    })
+    .then((res) => res.json())
 
-    .then((data) => {
-      addCards(data);
-      // const fieldsColection = data.items.map((item) => {
-      //   return {
-      //     title: item.fields.title,
-      //     url: item.fields.url,
-      //     img: data.includes.Asset[0].fields.file.url,
-      //     description: item.fields.textInfo,
-      //   };
-      // });
-      // return fieldsColection;
-    });
+    .then((data) => addCards(data));
 }
 function addCards(data) {
   const templetEl = document.querySelector("#cards__template");
   const contentEl = document.querySelector(".cardsContainer");
+
   const dataEl = data.items;
-  console.log(templetEl, contentEl);
-  console.log(data);
 
   for (let i = 0; i < dataEl.length; i++) {
     const clone = templetEl.content.cloneNode(true);
@@ -81,12 +66,4 @@ function addCards(data) {
 
     contentEl.appendChild(clone);
   }
-
-  // templetEl.content.querySelector(".portafolio__card-title").textContent =
-  //   params.title;
-
-  // templetEl.content.querySelector(".portafolio__card-img").src = params.img;
-  // templetEl.content.querySelector(".portafolio__card-text").textContent =
-  //   params.description;
-  // templetEl.content.querySelector(".portafolio__card-link").url = params.url;
 }

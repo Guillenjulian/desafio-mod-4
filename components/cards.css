@@ -23,7 +23,8 @@
 @media (min-width: 960px) {
   .cardsContainer,
   .cards {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 .cards__container,
