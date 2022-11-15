@@ -36,23 +36,6 @@ function getCards() {
     });
 }
 // esta funciones crean el CMS del las card de servicio y portafolo
-function addCards(params = {}) {
-  const templetEl = document.querySelector("#cards__template");
-  const contentEl = document.querySelector(".cardsContainer");
-
-  templetEl.content.querySelector(".portafolio__card-title").textContent =
-    params.title;
-
-  templetEl.content.querySelector(".portafolio__card-img").src = params.img;
-  templetEl.content.querySelector(".portafolio__card-text").textContent =
-    params.description;
-  templetEl.content.querySelector(".portafolio__card-link").url = params.url;
-
-  console.log(templetEl, contentEl);
-  const clone = templetEl.content.cloneNode(true);
-
-  contentEl.appendChild(clone);
-}
 function getData() {
   return fetch(
     "https://cdn.contentful.com/spaces/kwnz86dm90rc/environments/master/entries?access_token=vaS1bF8J0--5XkX33qLd-5o_qmrr992V7QzOj1GkCKA&content_type=desafioMod4"
@@ -62,15 +45,48 @@ function getData() {
     })
 
     .then((data) => {
-      console.log(data);
-      const fieldsColection = data.items.map((item) => {
-        return {
-          title: item.fields.title,
-          url: item.fields.url,
-          img: data.includes.Asset[0].fields.file.url,
-          description: item.fields.textInfo,
-        };
-      });
-      return fieldsColection;
+      addCards(data);
+      // const fieldsColection = data.items.map((item) => {
+      //   return {
+      //     title: item.fields.title,
+      //     url: item.fields.url,
+      //     img: data.includes.Asset[0].fields.file.url,
+      //     description: item.fields.textInfo,
+      //   };
+      // });
+      // return fieldsColection;
     });
+}
+function addCards(data) {
+  const templetEl = document.querySelector("#cards__template");
+  const contentEl = document.querySelector(".cardsContainer");
+  const dataEl = data.items;
+  console.log(templetEl, contentEl);
+  console.log(data);
+
+  for (let i = 0; i < dataEl.length; i++) {
+    const clone = templetEl.content.cloneNode(true);
+
+    let imgEl = (clone.querySelector(".portafolio__card-img").src =
+      data.includes.Asset[i].fields.file.url);
+
+    let titleEl = (clone.querySelector(".portafolio__card-title").textContent =
+      data.items[i].fields.title);
+
+    let descEl = (clone.querySelector(".portafolio__card-text").textContent =
+      data.items[i].fields.textInfo);
+
+    let linkEl = (clone.querySelector(".portafolio__card-link").href =
+      data.items[i].fields.url);
+
+    contentEl.appendChild(clone);
+  }
+
+  // templetEl.content.querySelector(".portafolio__card-title").textContent =
+  //   params.title;
+
+  // templetEl.content.querySelector(".portafolio__card-img").src = params.img;
+  // templetEl.content.querySelector(".portafolio__card-text").textContent =
+  //   params.description;
+  // templetEl.content.querySelector(".portafolio__card-link").url = params.url;
 }

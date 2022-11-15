@@ -3,9 +3,10 @@
 }
 .header {
   width: 100%;
-  height: 15vh;
+  height: 20vh;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   background: rgb(54, 179, 205);
   background: linear-gradient(
     150deg,
@@ -33,7 +34,7 @@
   .logo__img {
     height: 150px;
     width: 150px;
-    margin: 30px;
+    margin: 0px;
   }
 }
 

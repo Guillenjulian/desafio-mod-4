@@ -10,12 +10,6 @@
   margin: 0%;
   width: 100%;
 }
-.headerContainer {
-  overflow: hidden;
-}
-
-.welcome {
-}
 
 .welcome__div {
   height: 90vh;
@@ -85,20 +79,4 @@
   -webkit-box-shadow: 53px 33px 38px 3px rgba(0, 0, 0, 0.63);
   -moz-box-shadow: 53px 33px 38px 3px rgba(0, 0, 0, 0.63);
   align-items: baseline;
-}
-.cards {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 960px) {
-  .cards {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
 }
