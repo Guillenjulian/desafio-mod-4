@@ -4,7 +4,7 @@
 .body {
   margin: 0;
   padding: 0;
-  background-image: url("/style-img-logo-etc/servicio-img.png");
+  background-image: url("../style-img-logo-etc/servicio-img.png");
 }
 .headerContainer {
   height: 15vh;
