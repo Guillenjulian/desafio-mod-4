@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   background-image: url("../style-img-logo-etc/software-computer-code-1940x900_35196.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .servicios {
